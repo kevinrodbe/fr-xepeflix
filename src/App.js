@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { Router } from 'react-router-dom';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { createBrowserHistory } from 'history';
+import { Provider } from 'react-redux';
+
+import { MainRoute } from './adapter/routes/Main.route';
+import { initializeStore } from './adapter/state/store';
+
+const store = initializeStore();
 
 function App() {
+  const history = createBrowserHistory();
+  const theme = createTheme({
+    palette: {
+      action: {
+        disabled: 'inherit',
+        disabledBackground: '#5032a9',
+      },
+      primary: {
+        main: '#5032a9',
+      },
+    },
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Provider store={store}>
+        <ThemeProvider theme={theme}>
+          <Router history={history}>
+            <MainRoute />
+          </Router>
+        </ThemeProvider>
+      </Provider>
+    </>
   );
 }
 
