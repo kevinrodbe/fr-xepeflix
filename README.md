@@ -15,13 +15,14 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 ### Stack
 
-- Redux with Thunks: manejo de estado con side-effects
-- Yup: validacion de formularios
-- react-hook-form: manejo de los forms
-- useSWR: consumo de APIs
-- MUI: UI framework
-- Adapter Pattern: para datos y librerías de terceros.
-- Clean Architecture: Separacion de responsabilidades por capas.
+- [Redux][redux] with [Thunks][thunk]: manejo de estado con side-effects
+- [Yup][yup]: validacion de formularios
+- [react-hook-form][form]: manejo de los forms
+- [useSWR][swr]: consumo de APIs
+- [MUI][mui]: UI framework
+- [Adapter Pattern][adapter]: para datos y librerías de terceros.
+- [Clean Architecture][clean]: Separacion de responsabilidades por capas.
+
   - Modules: División funcional
 #### Independiente del Framework:
     - Domain: Dominio del contexto (módulo)
@@ -43,3 +44,11 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 
 [img-archi]: archi.jpg
+[redux]: <https://react-redux.js.org/>
+[thunk]: <https://github.com/reduxjs/redux-thunk>
+[yup]: <https://www.npmjs.com/package/yup>
+[form]: <https://react-hook-form.com/>
+[swr]: <https://swr.vercel.app/>
+[mui]: <https://mui.com/>
+[adapter]: <https://refactoring.guru/design-patterns/adapter>
+[clean]: <https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html>
