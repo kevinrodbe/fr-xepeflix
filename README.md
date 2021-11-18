@@ -1,7 +1,4 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+# Xepeflix to the moon
 ## Available Scripts
 
 In the project directory, you can run:
@@ -11,60 +8,38 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
 ### `yarn build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Redux with Thunks: manejo de estado con side-effects
+- Yup: validacion de formularios
+- react-hook-form: manejo de los forms
+- useSWR: consumo de APIs
+- MUI: UI framework
+- Adapter Pattern: para datos y librerías de terceros.
+- Clean Architecture: Separacion de responsabilidades por capas.
+  - Modules: División funcional
+#### Independiente del Framework:
+    - Domain: Dominio del contexto (módulo)
+    - Mappers: Adaptador entre el dominio del front y la estructura de datos externa. Así es mucho más manejable la actualización que haga back sobre la estructura de datos.
+    - Infrastructure:
+      - Models: Modelado del dominio con validaciones de datos
+      - Repository: Comunicación con el backend.
+#### Dependiente del Framework: React/Angular/Vue/ETC..
+    - Adapters:
+      - Hooks: Lógica con estado reutilizable (aca se podrían extraer casos de uso si hubiera más lógica en la aplicación)
+      - Routes: Definición de rutas publicas/privadas del módulo
+      - State: Manejo del estado del módulo. (con Redux en este caso)
+    - UI:
+      - Pages: Vistas a cargar del módulo
+      - Components: Bloques reutilizables de los que están compuestas las vistas
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![clean archi][img-archi]
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[img-archi]: archi.jpg
