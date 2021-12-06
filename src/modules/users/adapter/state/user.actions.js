@@ -6,7 +6,6 @@ export const REGISTER = createRequestTypes('REGISTER');
 export const doRegister = (payload) => {
   return async (dispatch) => {
     await dispatch(request());
-    dispatch(request());
     const [err] = await to(UserRepository.register(payload));
     if (err) {
       return dispatch(failure(err));
@@ -30,7 +29,6 @@ export const LOGIN = createRequestTypes('LOGIN');
 export const doLogin = (payload) => {
   return async (dispatch) => {
     await dispatch(request());
-    dispatch(request());
     const [err, res] = await to(UserRepository.login(payload));
     if (err) {
       return dispatch(failure(err));
