@@ -15,8 +15,8 @@ export const register = (body) => {
   });
 };
 
-export const login = (body) => {
-  const req = LoginMap.toPersistence(body);
+export const login = (user) => {
+  const req = LoginMap.toPersistence(user);
   const bd = webLocalStorage.get('user_bd') || [];
   const userFound = bd.find((u) => u.email === req.email);
   const isSamePWD = userFound?.password === req.password;
